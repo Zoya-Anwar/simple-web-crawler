@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Very Simple Webscraper</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>A Very Simple Webscraper</h1>
+
+    <form method="post">
+        <label for="url">Start with this URL and I will find you 100 more</label>
+        <br>
+        <input type="url" name="url"
+            placeholder="www.google.com"
+            value="{{ request.form['url'] }}"></input>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    
+    {% if scraped %}
+    <ul>
+        {% for link in scraped %}
+            <a href="{{link}}">{{link}}</a>
+            <br>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
