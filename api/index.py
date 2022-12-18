@@ -4,7 +4,7 @@ from web_crawler import web_crawl
 app = Flask(__name__)
 
 @app.route("/", methods=['POST', 'GET'])
-def web_scraper(url=None): 
+def home_page(url=None): 
     if request.method == 'POST':
         if url != "":
             scraped = web_crawl(request.form['url'])

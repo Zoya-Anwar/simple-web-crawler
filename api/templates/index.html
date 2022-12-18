@@ -32,13 +32,13 @@
 </head>
 
 <body>
-    <h1>A Very Simple Webscraper</h1>
+    <h1>A Very Simple Web Crawler</h1>
 
     <form method="post">
         <label for="url">Enter a URL</label>
         <br>
         <input type="url" name="url"
-            placeholder="www.google.com"
+            placeholder="https://stackoverflow.com"
             value="{{ request.form['url'] }}"></input>
         <br>
         <button type="submit">Submit</button>
@@ -48,11 +48,11 @@
 
         {% if scraped|length == 1 %}
 
-            <p>Scraped 1 link</p>
+            <p>Crawled 1 pages</p>
 
         {% else %}
 
-            <p>Scraped {{scraped|length}} links</p>
+            <p>Crawled {{scraped|length}} pages</p>
 
         {% endif %}
 
