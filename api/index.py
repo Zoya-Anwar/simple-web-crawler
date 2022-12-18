@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from web_crawler import web_crawl
+from api.web_crawler import web_crawl
 
 app = Flask(__name__)
 
